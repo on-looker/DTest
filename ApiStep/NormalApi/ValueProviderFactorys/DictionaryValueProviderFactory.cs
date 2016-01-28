@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NormalApi.ValueProvider;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,14 @@ namespace NormalApi.ValueProviderFactorys
 {
     public class DictionaryValueProviderFactory:ValueProviderFactory
     {
-      public static IDictionary<string ,object>
+        public static IDictionary<string, object> values{get;set;}
+        static DictionaryValueProviderFactory()
+        { 
+          values=new Dictionary<string,object>();
+        }
         public override IValueProvider GetValueProvider(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
-            throw new NotImplementedException();
+            return new DicitonaryValueProvider(values);
         }
     }
 }

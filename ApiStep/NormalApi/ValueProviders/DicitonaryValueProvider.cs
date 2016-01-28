@@ -9,11 +9,15 @@ namespace NormalApi.ValueProvider
 {
     public class DicitonaryValueProvider:IValueProvider
     {
-        public Dictionary<string, object> values { get; private set; }
+        public IDictionary<string, object> values { get; private set; }
         public bool ContainsPrefix(string prefix)
         {
            return values.Where(v => v.Key.Contains(prefix)).Count() > 0;
                 
+        }
+        public DicitonaryValueProvider(IDictionary<string,object> vas)
+        {
+            values = vas;
         }
 
         public ValueProviderResult GetValue(string key)
