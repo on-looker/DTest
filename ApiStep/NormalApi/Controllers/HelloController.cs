@@ -91,13 +91,20 @@ namespace NormalApi.Controllers
         {
             return header;
         }
-        public dynamic GetServices()
+        public dynamic GetServices<T>()
         {
             ComplexModelDto modto;
             MutableObjectModelBinder b1;
             ComplexModelDtoModelBinder b2;
             MutableObjectModelBinderProvider p1;
             ComplexModelDtoModelBinderProvider p2;
+            CollectionModelBinder<T> sa;
+            ArrayModelBinder<T> dasaad;
+            ArrayModelBinderProvider asdadad;
+            //DictionaryModelBinder<TKey, TValue> asdads;
+            DictionaryModelBinderProvider aaddaads;
+            //KeyValuePairModelBinder<TKey, TValue> addas;
+            TypeMatchModelBinder aaddaad;
            // GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator),new MyHttpControllerActivator(unitycontainer));
            // GlobalConfiguration.Configuration.DependencyResolver = new MydenpendencyResolver();
             return null;

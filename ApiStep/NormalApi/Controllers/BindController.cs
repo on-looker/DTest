@@ -33,5 +33,27 @@ namespace NormalApi.Controllers
 
             return contact;
         }
+        public void EnumersBind(IEnumerable<int> numbers)
+        {
+
+          var result=numbers;
+        }
+         [Route("EnumersBind")]
+        public void EnumersBind(IEnumerable<Contact> contacts)
+        {
+
+        }
+        [HttpPost]
+        [Route("BindContact")]
+        public void EnumersBind(IEnumerable<Contact> contacts1, IEnumerable<Contact> contactss)
+        {
+
+        }
+        [HttpPost]
+        [Route("SameBind")]
+        public void EnumersBind([FromBody]Contact contacts1,[FromBody] Contact contacts2)
+        {
+
+        }
     }
 }

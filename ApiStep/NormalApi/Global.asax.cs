@@ -27,11 +27,11 @@ namespace NormalApi
           //  GlobalConfiguration.Configuration.Services.RemoveAll(typeof(ModelBinderProvider), (obj) => { return true; });
           //  GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider),new ModelBinderProvider[]{new MyTypeConverterProvider()});
 
-            GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider), new ModelBinderProvider[]{
-                new MyTypeConverterProvider(),
-                new MyMutableObjectModelBinderProvider(),
-                new MyComplexModelDtoModelBinderProvider()});
-            GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ValueProviderFactory), new ValueProviderFactory[] { new StaticValueProviderFactory() });
+            //GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider), new ModelBinderProvider[]{
+            //    new MyTypeConverterProvider(),
+            //    new MyMutableObjectModelBinderProvider(),
+            //    new MyComplexModelDtoModelBinderProvider()});
+            //GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ValueProviderFactory), new ValueProviderFactory[] { new StaticValueProviderFactory() });
         }
     }
 }
