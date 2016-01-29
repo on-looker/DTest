@@ -6,9 +6,9 @@ using System.Web.Http.ModelBinding;
 
 namespace NormalApi.providers
 {
-    public class MyDictionaryModelBinderProvider : IModelBinder
+    public class MyDictionaryModelBinderProvider : ModelBinderProvider
     {
-        public bool BindModel(System.Web.Http.Controllers.HttpActionContext actionContext, ModelBindingContext bindingContext)
+        public override IModelBinder GetBinder(System.Web.Http.HttpConfiguration configuration, Type modelType)
         {
             throw new NotImplementedException();
         }

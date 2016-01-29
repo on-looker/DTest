@@ -1,5 +1,7 @@
 ﻿using NormalApi.Models;
+using NormalApi.providers;
 using NormalApi.valueProvider;
+using NormalApi.ValueProviderFactorys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using System.Web.Http.ValueProviders;
 
 namespace NormalApi.Controllers
 {
@@ -25,6 +28,7 @@ namespace NormalApi.Controllers
             StaticValueProviderFactory.Add("Address.Province", "四川省");
             StaticValueProviderFactory.Add("Address.City", "成都市");
             StaticValueProviderFactory.Add("Address.Area", "高新区");
+            DictionaryValueProviderFactory.values.Add("animal", new Cat { Age = 2, Name = "xiaomao", Tail = "0.2", type = "猫科" });
         }
         [AcceptVerbs("get")]
         [Route("GetBindContact")]
@@ -36,9 +40,9 @@ namespace NormalApi.Controllers
         public void EnumersBind(IEnumerable<int> numbers)
         {
 
-          var result=numbers;
+            var result = numbers;
         }
-         [Route("EnumersBind")]
+        [Route("EnumersBind")]
         public void EnumersBind(IEnumerable<Contact> contacts)
         {
 
@@ -51,9 +55,29 @@ namespace NormalApi.Controllers
         }
         [HttpPost]
         [Route("SameBind")]
-        public void EnumersBind([FromBody]Contact contacts1,[FromBody] Contact contacts2)
+        public void EnumersBind([FromBody]Contact contacts1, [FromBody] Contact contacts2)
         {
 
+        }
+        [HttpGet]
+        [Route("GetAnimal")]
+        public Animal GetAnimal([ValueProvider(typeof(DictionaryValueProviderFactory))]Animal animal)
+        {
+            return animal;
+
+        }
+
+        [HttpGet]
+        [Route("GetByModelState")]
+        public dynamic GetAll([ValueProvider(typeof(DictionaryValueProviderFactory))]Animal animal)
+        {
+            IDictionary<string, object> dic = new Dictionary<string, object>();
+            foreach (var key in this.ModelState.Keys)
+            {
+
+                dic.Add(key, this.ModelState[key].Value.RawValue);
+            }
+            return dic;
         }
     }
 }

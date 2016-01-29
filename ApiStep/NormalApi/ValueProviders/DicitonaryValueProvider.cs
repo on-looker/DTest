@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http.ValueProviders;
 
-namespace NormalApi.ValueProvider
+namespace NormalApi.ValueProviders
 {
     public class DicitonaryValueProvider:IValueProvider
     {

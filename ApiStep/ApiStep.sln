@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHost", "SelfHost\SelfHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormWeb", "FormWeb\FormWeb.csproj", "{C5335CFB-8E0D-4909-9DA7-156160D43A0F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{1281D764-E8A2-4E9A-BBA2-CF3DAE4895EC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NormalWeb", "NormalWeb\NormalWeb.csproj", "{58714815-80BF-489B-9279-BC5C898DEAC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NormalApi", "NormalApi\NormalApi.csproj", "{B0BE751D-3D89-4B5A-9058-D840891202A0}"

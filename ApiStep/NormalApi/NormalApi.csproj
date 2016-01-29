@@ -88,6 +88,8 @@
     <Compile Include="Builder\ModelNameBuilder.cs" />
     <Compile Include="Controllers\BindController.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\Cat.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="providers\ComplexModelDtoModelBinderProvider.cs" />
     <Compile Include="providers\MyArraryModelBinderProvider.cs" />

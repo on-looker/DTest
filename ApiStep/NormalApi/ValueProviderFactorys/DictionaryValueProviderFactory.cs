@@ -1,4 +1,4 @@
-﻿using NormalApi.ValueProvider;
+﻿using NormalApi.ValueProviders;
 using System;
 using System.Collections.Generic;
 using System.Linq;

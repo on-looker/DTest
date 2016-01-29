@@ -32,6 +32,7 @@ namespace NormalApi
             //    new MyMutableObjectModelBinderProvider(),
             //    new MyComplexModelDtoModelBinderProvider()});
             //GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ValueProviderFactory), new ValueProviderFactory[] { new StaticValueProviderFactory() });
+            GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider), new ModelBinderProvider[] { new MyTypeMatchModelBinderProvider() });
         }
     }
 }
