@@ -87,6 +87,8 @@
     <Compile Include="Binders\MyTypeMathModelBinder.cs" />
     <Compile Include="Builder\ModelNameBuilder.cs" />
     <Compile Include="Controllers\BindController.cs" />
+    <Compile Include="HttpParameterBindings\HttpRequestParameterBinding.cs" />
+    <Compile Include="HttpParameterBindings\MyModelBinderParameterBinding.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Cat.cs" />
@@ -102,7 +104,7 @@
     <Compile Include="ValueProviderFactorys\HttpHeaderValueProviderFactory.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HelloController.cs" />
-    <Compile Include="filters\JsonpMediaFormatter.cs" />
+    <Compile Include="formatters\JsonpMediaFormatter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -125,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="filters\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

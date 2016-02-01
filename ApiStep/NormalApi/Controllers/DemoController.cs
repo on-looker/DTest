@@ -16,6 +16,10 @@ namespace NormalApi.Controllers
             base.Initialize(context);
         }
 
+        public void Get(HttpRequestMessage request)
+        { 
+        
+        }
         public dynamic Get()
         {
             return "你好";
