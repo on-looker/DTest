@@ -13,6 +13,7 @@ namespace NormalWeb
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+           
         }
     }
 }

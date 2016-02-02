@@ -13,6 +13,10 @@ using System.Web.Http.ModelBinding;
 using NormalApi.providers;
 using System.Web.Http.ValueProviders;
 using NormalApi.valueProvider;
+using System.Web.Http.Controllers;
+using System.Web.Http.ValueProviders.Providers;
+using NormalApi.Binders;
+using System.Net.Http;
 
 namespace NormalApi
 {
@@ -24,8 +28,8 @@ namespace NormalApi
             //GlobalConfiguration.Configuration.Formatters.Insert(0,new JsonpMediaFormatter());
             ///使用自己的ModelBinderProvider
             ///            ///使用自己的ModelBinderProvider
-          //  GlobalConfiguration.Configuration.Services.RemoveAll(typeof(ModelBinderProvider), (obj) => { return true; });
-          //  GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider),new ModelBinderProvider[]{new MyTypeConverterProvider()});
+            //  GlobalConfiguration.Configuration.Services.RemoveAll(typeof(ModelBinderProvider), (obj) => { return true; });
+            //  GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider),new ModelBinderProvider[]{new MyTypeConverterProvider()});
 
             //GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider), new ModelBinderProvider[]{
             //    new MyTypeConverterProvider(),
@@ -33,6 +37,8 @@ namespace NormalApi
             //    new MyComplexModelDtoModelBinderProvider()});
             //GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ValueProviderFactory), new ValueProviderFactory[] { new StaticValueProviderFactory() });
             GlobalConfiguration.Configuration.Services.ReplaceRange(typeof(ModelBinderProvider), new ModelBinderProvider[] { new MyTypeMatchModelBinderProvider() });
+            GlobalConfiguration.Configuration.ParameterBindingRules.Insert(0, typeof(HttpRequestMessage), descriptor => new HttpRequestParameterBinding(descriptor));
         }
     }
+
 }

@@ -119,6 +119,16 @@ namespace NormalApi.Controllers
             FormatterParameterBinding asasddsa;
             HttpRequestParameterBinding asdadsads;
             object.ReferenceEquals(sa, sadsa);
+            CancellationTokenParameterBinding adasdsa;
+            ErrorParameterBinding adaadsad;
+            HttpParameterBinding asddassdaads;
+            ParameterBindingAttribute asdasdadsdasads;
+            HttpParameterDescriptor aadsadd;
+            ModelBinderAttribute asasddsadasasd;
+            ValueProviderAttribute _adads;
+            FromUriAttribute sdasad;
+            RouteDataValueProviderFactory daas;
+            FromBodyAttribute adadsasdasd;
             
             IEnumerable<MediaTypeFormatter> formatters=new MediaTypeFormatter[] {new XmlMediaTypeFormatter()};
             Contact contact=  this.Request.Content.ReadAsAsync<Contact>(formatters).Result;
