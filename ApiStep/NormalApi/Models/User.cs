@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Http.ModelBinding;
@@ -9,12 +10,20 @@ using System.Web.Http.ValueProviders.Providers;
 
 namespace NormalApi.Models
 {
-   // [TypeConverter(typeof(UserTypeConverter))]
+    // [TypeConverter(typeof(UserTypeConverter))]
     [ValueProvider(typeof(QueryStringValueProviderFactory))]
-    public class User
+    public class User : IValidatableObject
     {
         public string Name { get; set; }
         public int Age { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                yield return new ValidationResult("Name字段是必须的", new string[] { "Name" });
+            }
+        }
     }
 
     public class UserTypeConverter : TypeConverter

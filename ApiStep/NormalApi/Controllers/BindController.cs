@@ -79,5 +79,22 @@ namespace NormalApi.Controllers
             }
             return dic;
         }
+
+        public dynamic GetContact(Contact  contact)
+        {
+            if (string.IsNullOrEmpty(contact.Name))
+            {
+                this.ModelState.AddModelError("Name", "Name字段是必须的.");
+            }
+            if (ModelState.IsValid)
+            {
+                return Request.CreateResponse<Contact>(contact);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.ExpectationFailed, this.ModelState);
+            }
+        }
+  
     }
 }

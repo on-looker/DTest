@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .row a{ margin:10px;cursor:pointer}
+            .row a:hover { color:red}
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            ----------------------------
+        </div>
+        <div class="img">
+            <img src="~/content/1.jpg" />
+        </div>
+        <div>
+            哈哈哈哈哈哈哈哈哈
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-2.2.0.js"></script>
+<script>
+</script>
+<script>
+    (function ($) {
+        $.fn.extend({
+            BindMove: function (setting)
+            {
+                var defaultSetting = {
+                    distance: 10,
+                    speed: 5,
+                };
+                var set = $.extend({}, defaultSetting, setting);
+                var thisJqdom = this;
+                var button = $("<div class='row'>").append($("<a class='top'>↑</a>")).append($("<a class='bottom'>↓</a>")).append($("<a class='left'>←</a>")).append($("<a class='right'>→</a>"));
+                button.css('position', 'fixed').css('left', '20px').css('bottom', '20px');
+                $("html").append(button);
+                $('div.row>a.left').bind('click', function () {
+                    thisJqdom.animate({ marginLeft: '-=' + set.distance + 'px' }, set.time);
+                });
+                $('div.row>a.right').bind('click', function () {
+                    thisJqdom.animate({ marginLeft: '+=' + set.distance + 'px' }, set.time);
+                });
+                $('div.row>a.top').bind('click', function () {
+                    thisJqdom.animate({ marginTop: '-=' + set.distance + 'px' }, set.time);
+                });
+                $('div.row>a.bottom').bind('click', function () {
+                    thisJqdom.animate({ marginTop: '+=' + set.distance + 'px' }, set.time);
+                });
+            }
+        })
+    })(jQuery);
+</script>
+<script>
+    $("div.img").BindMove({ distance: 50, speed: 3000 });
+</script>

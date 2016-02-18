@@ -2,6 +2,7 @@
 using NormalApi.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing.Design;
 using System.Linq;
 using System.Net;
@@ -20,7 +21,8 @@ using System.Web.Http.ValueProviders;
 using System.Web.Http.ValueProviders.Providers;
 using System.Web.Http.WebHost;
 using System.Web.Http.WebHost.Routing;
-
+using System.ComponentModel.DataAnnotations;
+using System.Web.Http.Validation.Validators;
 namespace NormalApi.Controllers
 {
     public class HelloController : ApiController
@@ -28,8 +30,6 @@ namespace NormalApi.Controllers
        
         //public dynamic Get([FromBody]string id)
         //{
-
-            
         //    var items = GetNO();
         //    foreach (var i in items)
         //    {
@@ -129,7 +129,22 @@ namespace NormalApi.Controllers
             FromUriAttribute sdasad;
             RouteDataValueProviderFactory daas;
             FromBodyAttribute adadsasdasd;
-            
+            ValidationAttribute saadsdaa;
+            ValidationAttribute addsaads;
+            RequiredAttribute dada;
+            RangeAttribute adadsdad;
+            StringLengthAttribute a1233;
+            MaxLengthAttribute dasdas1;
+            MinLengthAttribute dda1;
+            RegularExpressionAttribute adsa2dsdsa;
+            CompareAttribute ad123;
+            CustomValidationAttribute a123sda;
+            IValidatableObject sa123das;
+            DataAnnotationsModelValidator vasdas;
+            RequiredMemberModelValidator aads22wdads;
+            ValidatableObjectAdapter a212314;
+            ValidatableObjectAdapter adsasd;
+            ErrorModelValidator a132123;
             IEnumerable<MediaTypeFormatter> formatters=new MediaTypeFormatter[] {new XmlMediaTypeFormatter()};
             Contact contact=  this.Request.Content.ReadAsAsync<Contact>(formatters).Result;
            // GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator),new MyHttpControllerActivator(unitycontainer));
